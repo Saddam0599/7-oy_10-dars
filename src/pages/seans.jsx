@@ -5,6 +5,14 @@ import "slick-carousel/slick/slick-theme.css";
 import useFetchData from "../hooks/Fetch";
 import kung from "../assets/kung.png";
 import Carousel from "./Carousel";
+import All from "../assets/All.svg";
+import Movie from "../assets/Movie.svg";
+import Theater from "../assets/Theater.svg";
+import Concerts from "../assets/Concerts.svg";
+import Sport from "../assets/Sport.svg";
+import Other from "../assets/Other.svg";
+import Sessions from "../assets/Sessions.svg";
+
 import list from "../assets/list.svg";
 
 function SeansPage() {
@@ -31,36 +39,36 @@ function SeansPage() {
       <nav className="bg-black text-white p-4 flex justify-between items-center ml-[10vh]">
         <div className="flex gap-[8px]">
           <button className="w-[125px] h-[48px] flex content-between gap-[8px] py-[14px] px-[32px] bg-red-600 border border-transparent hover:border-red-600 rounded-[12px]">
-            <img className="w-[24px] h-[24px]" src={list} alt="" />
+            <img className="w-[24px] h-[24px]" src={All} alt=" All.svg seans icon" />
             <h3 className="font-aeonik-pro text-[16px] font-medium leading-[20px] mt-[5%] mr-[32px]">Все</h3>
           </button>
           <button className="w-[136px] h-[48px] flex content-between gap-[8px] py-[14px] px-[32px] bg-[#1D1D1D80] border border-transparent hover:border-red-600 rounded-[12px]">
-            <img className="w-[24px] h-[24px]" src={list} alt="" />
+            <img className="w-[24px] h-[24px]" src={Movie} alt=" Movie.svg seans icon" />
             <h3 className="font-aeonik-pro text-[16px] font-medium leading-[20px] mt-[5%] mr-[32px]">Кино</h3>
           </button>
 
           <button className="w-[140px] h-[48px] flex content-between gap-[8px] py-[14px] px-[32px] bg-[#1D1D1D80] border border-transparent hover:border-red-600 rounded-[12px]">
-            <img className="w-[24px] h-[24px]" src={list} alt="" />
+            <img className="w-[24px] h-[24px]" src={Theater} alt=" Theater.svg seans icon" />
             <h3 className="font-aeonik-pro text-[16px] font-medium leading-[20px] mt-[5%] mr-[32px]">Театр</h3>
           </button>
 
           <button className="w-[173px] h-[48px] flex content-between gap-[8px] py-[14px] px-[32px] bg-[#1D1D1D80] border border-transparent hover:border-red-600 rounded-[12px]">
-            <img className="w-[24px] h-[24px]" src={list} alt="" />
+            <img className="w-[24px] h-[24px]" src={Concerts} alt=" Contacts.svg seans icon" />
             <h3 className="font-aeonik-pro text-[16px] font-medium leading-[20px] mt-[5%] mr-[32px]">Концерты</h3>
           </button>
 
           <button className="w-[144px] h-[48px] flex content-between gap-[8px] py-[14px] px-[32px] bg-[#1D1D1D80] border border-transparent hover:border-red-600 rounded-[12px]">
-            <img className="w-[24px] h-[24px]" src={list} alt="" />
+            <img className="w-[24px] h-[24px]" src={Sport} alt=" Sport.svg seans icon" />
             <h3 className="font-aeonik-pro text-[16px] font-medium leading-[20px] mt-[5%] mr-[32px]">Спорт</h3>
           </button>
 
           <button className="w-[152px] h-[48px] flex content-between gap-[8px] py-[14px] px-[32px] bg-[#1D1D1D80] border border-transparent hover:border-red-600 rounded-[12px]">
-            <img className="w-[24px] h-[24px]" src={list} alt="" />
+            <img className="w-[24px] h-[24px]" src={Other} alt=" Other.svg seans icon" />
             <h3 className="font-aeonik-pro text-[16px] font-medium leading-[20px] mt-[5%] mr-[32px]">Другие</h3>
           </button>
 
           <button className="w-[156px] h-[48px] flex content-between gap-[8px] py-[14px] px-[32px] bg-[#1D1D1D80] border border-transparent hover:border-red-600 rounded-[12px] ml-[11.3%]">
-            <img className="w-[24px] h-[24px]" src={list} alt="" />
+            <img className="w-[24px] h-[24px]" src={Sessions} alt="Sessions.svg seans icon" />
             <h3 className="font-aeonik-pro text-[16px] font-medium leading-[20px] mt-[5%] mr-[32px]">Залы</h3>
           </button>
         </div>
