@@ -12,9 +12,6 @@ import Concerts from "../assets/Concerts.svg";
 import Sport from "../assets/Sport.svg";
 import Other from "../assets/Other.svg";
 import Sessions from "../assets/Sessions.svg";
-
-import list from "../assets/list.svg";
-
 function SeansPage() {
   const { data: movies, isLoading, isError } = useFetchData("/movies");
 
