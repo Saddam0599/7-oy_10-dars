@@ -1,11 +1,11 @@
-import { useState } from "react";
+import { memo, useState } from "react";
 import MainLayout from "../layouts/Main_layout";
 import Render_bilets from "../components/Render_bilets";
 import HistoryTickets from "../components/HistoryTickets";
 import Payment_modal from "../components/Payment_modal";
 import { Bars } from "react-loader-spinner";
 import { useParams } from "react-router-dom";
-import useFetchData from "../hooks/Fetch"; 
+import useFetchData from "../hooks/Fetch";
 import useStore from "../zustand/index";
 
 function Bileti() {
@@ -15,7 +15,7 @@ function Bileti() {
   const { id } = useParams();
   const { data: movie, loading } = useFetchData(`/movies/${id}`);
 
-  const { tickets } = useStore(); 
+  const { tickets } = useStore();
 
   if (loading) {
     return (
@@ -55,7 +55,11 @@ function Bileti() {
               История
             </button>
           </div>
-          {biletTab === 1 ? <Render_bilets openFunc={setOpen} /> : <HistoryTickets tickets={tickets} />} 
+          {biletTab === 1 ? (
+            <Render_bilets openFunc={setOpen} />
+          ) : (
+            <HistoryTickets tickets={tickets} />
+          )}
         </div>
       </MainLayout>
 
@@ -64,4 +68,4 @@ function Bileti() {
   );
 }
 
-export default Bileti;
+export default memo(Bileti);

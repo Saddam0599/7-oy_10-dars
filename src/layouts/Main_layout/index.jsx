@@ -5,9 +5,11 @@ import { useLocation } from "react-router";
 const MainLayout = (prop) => {
   const location = useLocation();
 
+
   return (
     <div className="flex flex-col min-h-[97vh] pb-10">
       <Header />
+
       <div className="flex-grow">{prop.children}</div>
 
       {location.pathname === "/login/sms" ? (

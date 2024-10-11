@@ -9,11 +9,14 @@ import activeSeans from "../assets/redSeans.svg";
 import activeBilet from "../assets/active_bilet.svg";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
+// import {isEmpty} from './lodash'; ////lodash kutubxonasi
 
 const Header = () => {
   const location = useLocation();
   const navigate = useNavigate();
   const isLogin = useSelector((prev) => prev.auth.token);
+
+
 
   return (
     <header className="px-[90px] flex mb-3 items-center">
@@ -80,3 +83,4 @@ const Header = () => {
 };
 
 export default Header;
+

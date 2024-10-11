@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useMemo } from "react";
 import MainLayout from "../layouts/Main_layout";
 import searchBtn from "../assets/search-line.svg";
 import OneTicket from "../components/OneTicket";
@@ -9,17 +9,16 @@ function SearchPage() {
   const [hasSearched, setHasSearched] = useState(false); 
   const { data, isLoading, error } = useFetchData("/movies");
 
-  const filteredData = data?.filter((movie) =>
-    movie.title.toLowerCase().startsWith(inputValue.toLowerCase())
-  );
+  const filteredData = useMemo(() => {
+    if (!data || !inputValue) return [];
+    return data.filter((movie) =>
+      movie.title.toLowerCase().startsWith(inputValue.toLowerCase())
+    );
+  }, [data, inputValue]);
 
   const handleInputChange = (e) => {
     setInputValue(e.target.value);
-    if (e.target.value) {
-      setHasSearched(true); 
-    } else {
-      setHasSearched(false);
-    }
+    setHasSearched(!!e.target.value); 
   };
 
   return (
@@ -46,7 +45,7 @@ function SearchPage() {
         ) : error ? (
           <p>Ошибка: {error.message}</p>
         ) : hasSearched ? ( 
-          filteredData && filteredData.length > 0 ? (
+          filteredData.length > 0 ? (
             filteredData.map((movie) => (
               <OneTicket key={movie.id} title={movie.title} img={movie.img} />
             ))
